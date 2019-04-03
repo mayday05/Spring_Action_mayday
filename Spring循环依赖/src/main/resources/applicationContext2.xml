@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--scope="singleton"(默认就是单例方式)  -->
+    <bean id="a" class="cn.mayday.springrecycledp.demo1.StudentA" scope="singleton">
+        <property name="studentB" ref="b"></property>
+    </bean>
+    <bean id="b" class="cn.mayday.springrecycledp.demo1.StudentB" scope="singleton">
+        <property name="studentC" ref="c"></property>
+    </bean>
+    <bean id="c" class="cn.mayday.springrecycledp.demo1.StudentC" scope="singleton">
+        <property name="studentA" ref="a"></property>
+    </bean>
+</beans>
